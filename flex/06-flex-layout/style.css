@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+* {
+  /* to fix problem wth left links not aligning with leftmost side of page*/
+  padding: 0;
+}
+
 body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  /* flex container, vertical main axis */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 img {
@@ -16,6 +25,10 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  /* add padding & spacing */
+  padding: 7px;
+  margin: 3px;
+
 }
 
 input {
@@ -23,4 +36,83 @@ input {
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
+}
+
+.header {
+  /* flex container, horizontal main axis */
+  display: flex;
+  flex-direction: row;
+  /* push buttons to edge of screen */
+  justify-content: space-between;
+  /* add padding */
+  padding: 3px;
+
+}
+
+.content {
+  /* flex container, vertical main axis */
+  display: flex;
+  flex-direction: column;
+  /* content takes up most of page, ~85% of vertical space */
+  flex-basis: 85%;
+  /* align / justify content */
+  align-items: center;
+  justify-content: center;
+  /* add gaps between flex items */
+  gap: 15px;
+  
+}
+
+.footer {
+  /* flex container, horizontal main axis */
+  display: flex;
+  flex-direction: row;
+  /* push buttons to edge of screen */
+  justify-content: space-between;
+  /* make grey colour */
+  background-color: #eeeeee;
+  /* add padding */
+  padding: 3px;
+
+}
+
+.left-links {
+  /* flex container, horizontal main axis */
+  display: flex;
+  flex-direction: row;
+  /* remove bullet points from links */
+  list-style-type: none;
+  /* left links take up ~10% of header/footer */
+  flex-basis: 15%;
+  /* push to left */
+  justify-content: flex-start;
+}
+
+.right-links {
+  /* flex container, horizontal main axis */
+  display: flex;
+  flex-direction: row;
+  /* remove bullet points from links */
+  list-style-type: none;
+  /* right links take up ~10% of header/footer */
+  flex-basis: 15%;
+  /* push to right */
+  justify-content: flex-end;
+
+}
+
+.buttons {
+  /* flex container, horizontal main axis */
+  display: flex;
+  flex-direction: row;
+
+}
+
+a {
+  /* get rid of hyperlink underlines */
+  text-decoration: none;
+  /* change to grey text */
+  color: grey;
+  /* add padding between links */
+  padding: 10px;
 }
